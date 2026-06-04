@@ -18,6 +18,7 @@
     HaplyDevice
     OpenXRDevice
     ManusVive
+    HaptikosQuest
     isaaclab.devices.openxr.retargeters.GripperRetargeter
     isaaclab.devices.openxr.retargeters.Se3AbsRetargeter
     isaaclab.devices.openxr.retargeters.Se3RelRetargeter
@@ -111,6 +112,15 @@ Manus + Vive
     :members:
     :inherited-members:
     :show-inheritance:
+    :noindex:
+
+Haptikos + Quest
+----------------
+
+.. autoclass:: HaptikosQuest
+    :show-inheritance:
+    :no-autosummary:
+    :exclude-members: __init__, __new__
     :noindex:
 
 Retargeters
