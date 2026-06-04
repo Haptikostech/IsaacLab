@@ -257,7 +257,7 @@ html_css_files = ["custom.css"]
 html_theme_options = {
     "path_to_docs": "docs/",
     "collapse_navigation": True,
-    "repository_url": "https://github.com/isaac-sim/IsaacLab",
+    "repository_url": "https://github.com/Haptikostech/IsaacLab",
     "use_repository_button": True,
     "use_issues_button": True,
     "use_edit_page_button": True,
@@ -271,7 +271,7 @@ html_theme_options = {
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/isaac-sim/IsaacLab",
+            "url": "https://github.com/Haptikostech/IsaacLab",
             "icon": "fa-brands fa-square-github",
             "type": "fontawesome",
         },
@@ -283,8 +283,8 @@ html_theme_options = {
         },
         {
             "name": "Stars",
-            "url": "https://img.shields.io/github/stars/isaac-sim/IsaacLab?color=fedcba",
-            "icon": "https://img.shields.io/github/stars/isaac-sim/IsaacLab?color=fedcba",
+            "url": "https://img.shields.io/github/stars/Haptikostech/IsaacLab?color=fedcba",
+            "icon": "https://img.shields.io/github/stars/Haptikostech/IsaacLab?color=fedcba",
             "type": "url",
         },
     ],

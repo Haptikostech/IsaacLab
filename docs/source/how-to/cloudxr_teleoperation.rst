@@ -22,8 +22,7 @@ teleoperation in Isaac Lab.
 
 .. note::
 
-   See :ref:`manus-vive-handtracking` for more information on supported hand-tracking peripherals.
-
+   See :ref:`manus-vive-handtracking` and :ref:`haptikos-quest-handtracking` for more information on supported hand-tracking peripherals.
 .. note::
 
    **Meta Quest 3 and Pico 4 Ultra Support (Early Access)**
@@ -56,7 +55,8 @@ This guide will walk you through how to:
 * :ref:`run-isaac-lab-with-the-cloudxr-runtime`
 
 * :ref:`use-apple-vision-pro`, including how to :ref:`build-apple-vision-pro`,
-  :ref:`teleoperate-apple-vision-pro`, and :ref:`manus-vive-handtracking`.
+  :ref:`teleoperate-apple-vision-pro`, :ref:`manus-vive-handtracking`, and
+  :ref:`haptikos-quest-handtracking`.
 
 * :ref:`develop-xr-isaac-lab`, including how to :ref:`run-isaac-lab-with-xr`,
   :ref:`configure-scene-placement`, and :ref:`optimize-xr-performance`.
@@ -553,6 +553,89 @@ Ensure the lighthouse remains stable; a stand is recommended to prevent wobbling
    OpenXR hand tracking wrist pose.
    This auto-mapping calculation supports up to 2 Vive trackers;
    if more than 2 Vive trackers are detected, it uses the first two trackers detected for calibration, which may not be correct.
+
+.. _haptikos-quest-handtracking:
+
+Haptikos + Quest Hand Tracking
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Haptikos Isaac Teleop plugin can provide Haptikos exoskeleton hand tracking through OpenXR.
+The plugin reads controller poses and hand tracking data from the Haptikos Core App, combines them,
+and pushes the resulting left and right hand joint poses into the OpenXR runtime. The plugin currently
+supports Linux, has been tested with Meta Quest headsets, and may work with other OpenXR headsets that
+provide controllers.
+
+.. dropdown:: Haptikos plugin installation instructions
+   :open:
+
+   Install the plugin from the Haptikos fork of Isaac Teleop:
+   `Haptikostech/IsaacTeleop haptikos plugin <https://github.com/Haptikostech/IsaacTeleop/tree/haptikos-plugin/src/plugins/haptikos>`_.
+
+To use the plugin, attach the controllers to the Haptikos exoskeletons using the included mount.
+Keep the Haptikos Core App, Haptikos exoskeletons, controllers, and OpenXR headset active while the
+plugin is running. The Haptikos glove forward direction should be calibrated to align with the HMD
+forward direction.
+
+Run the Haptikos plugin and teleoperation example:
+
+.. dropdown:: Run Haptikos + Quest teleoperation
+   :open:
+
+   #. Activate the Isaac Teleop Python environment:
+
+      .. code-block:: bash
+
+         source isaac_teleop_env/bin/activate
+
+   #. Start the Isaac Teleop CloudXR server for Haptikos:
+
+      .. code-block:: bash
+
+         python -m isaacteleop.cloudxr
+
+   #. Find the IP address of the workstation running CloudXR.
+
+   #. On the headset, open the Isaac Teleop client:
+
+      .. code-block:: text
+
+         https://nvidia.github.io/IsaacTeleop/client
+
+   #. Enter the workstation IP address in the headset client and accept the self-signed SSL certificate.
+
+   #. Open a new terminal and prepare the CloudXR environment for the Haptikos plugin:
+
+      .. code-block:: bash
+
+         cd IsaacTeleop
+         source ~/.cloudxr/run/cloudxr.env
+
+   #. Run the Haptikos plugin executable:
+
+      .. code-block:: bash
+
+         ./install/plugins/haptikos/haptikos_hands_plugin
+
+      If the executable is not available under ``install/plugins/haptikos``, build the plugin by following
+      the installation instructions above, then run the command again.
+
+   #. Open a new terminal and prepare the CloudXR environment for Isaac Lab:
+
+      .. code-block:: bash
+
+         cd IsaacLab
+         source ~/.cloudxr/run/cloudxr.env
+
+   #. Run the Isaac Lab teleoperation example with OpenXR hand tracking:
+
+      .. code-block:: bash
+
+         ./isaaclab.sh -p scripts/environments/teleoperation/teleop_se3_agent.py \
+             --task Isaac-PickPlace-GR1T2-Abs-v0 \
+             --teleop_device handtracking \
+             --enable_pinocchio \
+             --device cpu \
+             --xr
 
 .. _develop-xr-isaac-lab:
 

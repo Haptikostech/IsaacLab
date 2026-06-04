@@ -5,13 +5,16 @@
 
 """Sub-package containing utilities for common operations and helper functions."""
 
+import contextlib
+
 from .array import *
 from .buffers import *
 from .configclass import configclass
 from .dict import *
 from .interpolation import *
 from .logger import *
-from .mesh import *
+with contextlib.suppress(ModuleNotFoundError):
+    from .mesh import *
 from .modifiers import *
 from .string import *
 from .timer import Timer
