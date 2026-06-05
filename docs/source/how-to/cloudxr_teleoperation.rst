@@ -22,7 +22,7 @@ teleoperation in Isaac Lab.
 
 .. note::
 
-   See :ref:`manus-vive-handtracking` and :ref:`haptikos-quest-handtracking` for more information on supported hand-tracking peripherals.
+   See :ref:`manus-vive-handtracking` for more information on supported hand-tracking peripherals.
 .. note::
 
    **Meta Quest 3 and Pico 4 Ultra Support (Early Access)**
@@ -55,8 +55,8 @@ This guide will walk you through how to:
 * :ref:`run-isaac-lab-with-the-cloudxr-runtime`
 
 * :ref:`use-apple-vision-pro`, including how to :ref:`build-apple-vision-pro`,
-  :ref:`teleoperate-apple-vision-pro`, :ref:`manus-vive-handtracking`, and
-  :ref:`haptikos-quest-handtracking`.
+  :ref:`teleoperate-apple-vision-pro`, and :ref:`manus-vive-handtracking`
+  , and :ref:`haptikos-quest-handtracking`.
 
 * :ref:`develop-xr-isaac-lab`, including how to :ref:`run-isaac-lab-with-xr`,
   :ref:`configure-scene-placement`, and :ref:`optimize-xr-performance`.
@@ -560,7 +560,7 @@ Haptikos + Quest Hand Tracking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Haptikos Isaac Teleop plugin can provide Haptikos exoskeleton hand tracking through OpenXR.
-The plugin reads controller poses and hand tracking data from the Haptikos Core App, combines them,
+The plugin reads controller poses and hand tracking data from the Haptikos App, combines them,
 and pushes the resulting left and right hand joint poses into the OpenXR runtime. The plugin currently
 supports Linux, has been tested with Meta Quest headsets, and may work with other OpenXR headsets that
 provide controllers.
@@ -571,9 +571,10 @@ provide controllers.
    Install the plugin from the Haptikos fork of Isaac Teleop:
    `Haptikostech/IsaacTeleop haptikos plugin <https://github.com/Haptikostech/IsaacTeleop/tree/haptikos-plugin/src/plugins/haptikos>`_.
 
+
 To use the plugin, attach the controllers to the Haptikos exoskeletons using the included mount.
-Keep the Haptikos Core App, Haptikos exoskeletons, controllers, and OpenXR headset active while the
-plugin is running. The Haptikos glove forward direction should be calibrated to align with the HMD
+Keep the Haptikos App, Haptikos exoskeletons, controllers, and OpenXR headset active while the
+plugin is running. The Haptikos exoskeleton forward direction should be calibrated to align with the HMD
 forward direction.
 
 Run the Haptikos plugin and teleoperation example:
@@ -617,7 +618,7 @@ Run the Haptikos plugin and teleoperation example:
          ./install/plugins/haptikos/haptikos_hands_plugin
 
       If the executable is not available under ``install/plugins/haptikos``, build the plugin by following
-      the installation instructions above, then run the command again.
+      its installation instructions, then run the command again.
 
    #. Open a new terminal and prepare the CloudXR environment for Isaac Lab:
 
