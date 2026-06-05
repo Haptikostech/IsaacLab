@@ -13,7 +13,7 @@ from .openxr_device import OpenXRDevice
 class HaptikosQuest(OpenXRDevice):
     """Haptikos exoskeleton hand tracking through OpenXR.
 
-    To run the Haptikos Plugin you need to download Isaac Teleop (`IsaacTeleop <https://github.com/NVIDIA/IsaacTeleop>`_) and install the Haptikos Plugin(`IsaacTeleop <https://github.com/NVIDIA/IsaacTeleop/tree/main/src/plugins/haptikos`_) that runs separately.
+    To run the Haptikos Plugin you need to download Isaac Teleop (`IsaacTeleop <https://github.com/NVIDIA/IsaacTeleop>`_) and install the Haptikos Plugin (`Haptikos Plugin <https://github.com/NVIDIA/IsaacTeleop/tree/main/src/plugins/haptikos>`_) that runs separately.
     It reads controller poses and hand tracking data from the Haptikos App, combines them, and injects left and right hand joint poses into the
     OpenXR runtime as hand tracker data.
 
@@ -28,8 +28,9 @@ class HaptikosQuest(OpenXRDevice):
     * Controllers mounted on the exoskeletons.
     * The Haptikos Isaac Teleop plugin executable.
 
-    The Haptikos ROBOTICS API (`Haptikos API <https://github.com/Haptikostech/HaptikosAPI>`_) must be
+    The Haptikos Robotics API (`Haptikos API <https://github.com/Haptikostech/HaptikosAPI>`_) must be
     downloaded and installed separately.
+    You can setup and use Haptics with the Robotics API. The library provides functionality that you can use on IsaacLab and IsaacTeleop scenarios.
     The headset controllers must be attached to the Haptikos exoskeletons using the included mount.
     Orientation calibration aligns the Haptikos glove forward direction with the HMD forward direction.
     """
