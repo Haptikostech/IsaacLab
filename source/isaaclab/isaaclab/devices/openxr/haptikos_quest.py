@@ -17,8 +17,6 @@ class HaptikosQuest(OpenXRDevice):
     from the Haptikos App, combines them, and injects left and right hand joint poses into the
     OpenXR runtime as hand tracker data.
 
-    This device makes the injected OpenXR tracking data available through Isaac Lab's OpenXR device API.
-
     The Haptikos plugin currently supports Linux and has been tested with Meta Quest headsets.
     Other OpenXR headsets with controllers may also work.
 
@@ -26,7 +24,7 @@ class HaptikosQuest(OpenXRDevice):
 
     * Haptikos App.
     * Haptikos exoskeletons.
-    * An OpenXR headset and controllers.
+    * A Meta Quest/OpenXR headset and controllers.
     * Controllers mounted on the exoskeletons.
     * The Haptikos Isaac Teleop plugin executable.
 
