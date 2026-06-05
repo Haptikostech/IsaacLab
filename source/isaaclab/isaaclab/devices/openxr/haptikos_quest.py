@@ -13,8 +13,8 @@ from .openxr_device import OpenXRDevice
 class HaptikosQuest(OpenXRDevice):
     """Haptikos exoskeleton hand tracking through OpenXR.
 
-    The Haptikos Isaac Teleop plugin (`IsaacTeleop Haptikos Plugin <https://github.com/Haptikostech/IsaacTeleop/tree/haptikos-plugin/src/plugins/haptikos>`_) runs separately. It reads controller poses and hand tracking data
-    from the Haptikos App, combines them, and injects left and right hand joint poses into the
+    To run the Haptikos Plugin you need to download Isaac Teleop (`IsaacTeleop <https://github.com/NVIDIA/IsaacTeleop>`_) and install the Haptikos Plugin(`IsaacTeleop <https://github.com/NVIDIA/IsaacTeleop/tree/main/src/plugins/haptikos`_) that runs separately.
+    It reads controller poses and hand tracking data from the Haptikos App, combines them, and injects left and right hand joint poses into the
     OpenXR runtime as hand tracker data.
 
     The Haptikos plugin currently supports Linux and has been tested with Meta Quest headsets.
