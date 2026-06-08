@@ -55,8 +55,8 @@ This guide will walk you through how to:
 * :ref:`run-isaac-lab-with-the-cloudxr-runtime`
 
 * :ref:`use-apple-vision-pro`, including how to :ref:`build-apple-vision-pro`,
-  :ref:`teleoperate-apple-vision-pro`, and :ref:`manus-vive-handtracking`
-  , and :ref:`haptikos-quest-handtracking`.
+  :ref:`teleoperate-apple-vision-pro`, :ref:`manus-vive-handtracking`,
+  and :ref:`haptikos-quest-handtracking`.
 
 * :ref:`develop-xr-isaac-lab`, including how to :ref:`run-isaac-lab-with-xr`,
   :ref:`configure-scene-placement`, and :ref:`optimize-xr-performance`.

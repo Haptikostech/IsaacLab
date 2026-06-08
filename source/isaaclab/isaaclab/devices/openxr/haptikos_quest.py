@@ -7,7 +7,11 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass
+
+from ..device_base import DeviceBase, DeviceCfg
 from .openxr_device import OpenXRDevice
+from .xr_cfg import XrCfg
 
 
 class HaptikosQuest(OpenXRDevice):
@@ -34,3 +38,11 @@ class HaptikosQuest(OpenXRDevice):
     The headset controllers must be attached to the Haptikos exoskeletons using the included mount.
     Orientation calibration aligns the Haptikos glove forward direction with the HMD forward direction.
     """
+
+
+@dataclass
+class HaptikosQuestCfg(DeviceCfg):
+    """Configuration for Haptikos and Quest."""
+
+    xr_cfg: XrCfg | None = None
+    class_type: type[DeviceBase] = HaptikosQuest

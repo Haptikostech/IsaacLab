@@ -5,7 +5,7 @@
 
 """OpenXR devices for teleoperation and interaction."""
 
-from .haptikos_quest import HaptikosQuest
+from .haptikos_quest import HaptikosQuest, HaptikosQuestCfg
 from .manus_vive import ManusVive, ManusViveCfg
 from .openxr_device import OpenXRDevice, OpenXRDeviceCfg
 from .xr_cfg import XrAnchorRotationMode, XrCfg, remove_camera_configs

@@ -1,1 +1,0 @@
-/home/petroskon/isaacsim/kit/python.sh

@@ -19,6 +19,7 @@
     OpenXRDevice
     ManusVive
     HaptikosQuest
+    HaptikosQuestCfg
     isaaclab.devices.openxr.retargeters.GripperRetargeter
     isaaclab.devices.openxr.retargeters.Se3AbsRetargeter
     isaaclab.devices.openxr.retargeters.Se3RelRetargeter
@@ -121,6 +122,11 @@ Haptikos + Quest
     :show-inheritance:
     :no-autosummary:
     :exclude-members: __init__, __new__
+    :noindex:
+
+.. autoclass:: HaptikosQuestCfg
+    :members:
+    :show-inheritance:
     :noindex:
 
 Retargeters
