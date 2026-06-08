@@ -24,19 +24,18 @@ from isaaclab.devices.openxr.common import HAND_JOINT_NAMES
 from isaaclab.devices.retargeter_base import RetargeterBase
 
 from ..device_base import DeviceBase, DeviceCfg
+from .xr_anchor_utils import XrAnchorSynchronizer
 from .xr_cfg import XrCfg
 
 # For testing purposes, we need to mock the XRCore, XRPoseValidityFlags classes
 XRCore = None
 XRPoseValidityFlags = None
 XRCoreEventType = None
-SingleXFormPrim = None
 
 with contextlib.suppress(ModuleNotFoundError):
     from omni.kit.xr.core import XRCore, XRCoreEventType, XRPoseValidityFlags
 
-with contextlib.suppress(ModuleNotFoundError):
-    from isaacsim.core.prims import SingleXFormPrim
+from isaacsim.core.prims import SingleXFormPrim
 
 
 class OpenXRDevice(DeviceBase):
@@ -106,12 +105,9 @@ class OpenXRDevice(DeviceBase):
         else:
             self._xr_anchor_headset_path = "/World/XRAnchor"
 
-        if SingleXFormPrim is not None:
-            _ = SingleXFormPrim(
-                self._xr_anchor_headset_path, position=self._xr_cfg.anchor_pos, orientation=self._xr_cfg.anchor_rot
-            )
-        else:
-            logger.warning("XR: SingleXFormPrim not available; skipping XR anchor prim creation")
+        _ = SingleXFormPrim(
+            self._xr_anchor_headset_path, position=self._xr_cfg.anchor_pos, orientation=self._xr_cfg.anchor_rot
+        )
 
         if hasattr(carb, "settings"):
             carb.settings.get_settings().set_float(
@@ -127,8 +123,6 @@ class OpenXRDevice(DeviceBase):
         self._anchor_sync: XrAnchorSynchronizer | None = None
         if self._xr_core is not None and self._xr_cfg.anchor_prim_path is not None:
             try:
-                from .xr_anchor_utils import XrAnchorSynchronizer
-
                 self._anchor_sync = XrAnchorSynchronizer(
                     xr_core=self._xr_core,
                     xr_cfg=self._xr_cfg,
