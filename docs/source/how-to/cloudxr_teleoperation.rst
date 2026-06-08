@@ -559,7 +559,7 @@ Ensure the lighthouse remains stable; a stand is recommended to prevent wobbling
 Haptikos + Quest Hand Tracking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Haptikos Isaac Teleop plugin can provide Haptikos exoskeleton hand tracking and haptics through OpenXR.
+The Haptikos Isaac Teleop plugin can provide Haptikos exoskeleton hand tracking and haptic feedback through OpenXR.
 The plugin reads controller poses and hand tracking data from the Haptikos App, combines them,
 and pushes the resulting left and right hand joint poses into the OpenXR runtime. The plugin currently
 supports Linux, has been tested with Meta Quest headsets, and may work with other OpenXR headsets that
