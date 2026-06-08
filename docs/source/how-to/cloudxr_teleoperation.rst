@@ -22,7 +22,7 @@ teleoperation in Isaac Lab.
 
 .. note::
 
-   See :ref:`manus-vive-handtracking` for more information on supported hand-tracking peripherals.
+   See :ref:`manus-vive-handtracking` and :ref:`haptikos-quest-handtracking` for more information on supported hand-tracking peripherals.
 .. note::
 
    **Meta Quest 3 and Pico 4 Ultra Support (Early Access)**
@@ -559,17 +559,18 @@ Ensure the lighthouse remains stable; a stand is recommended to prevent wobbling
 Haptikos + Quest Hand Tracking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Haptikos Isaac Teleop plugin can provide Haptikos exoskeleton hand tracking through OpenXR.
+The Haptikos Isaac Teleop plugin can provide Haptikos exoskeleton hand tracking and haptics through OpenXR.
 The plugin reads controller poses and hand tracking data from the Haptikos App, combines them,
 and pushes the resulting left and right hand joint poses into the OpenXR runtime. The plugin currently
 supports Linux, has been tested with Meta Quest headsets, and may work with other OpenXR headsets that
 provide controllers.
 
+.. _haptikos-quest-handtracking-installation-instructions:
 .. dropdown:: Haptikos plugin installation instructions
    :open:
 
-   Install the plugin from the Haptikos fork of Isaac Teleop:
-   `Haptikostech/IsaacTeleop haptikos plugin <https://github.com/Haptikostech/IsaacTeleop/tree/haptikos-plugin/src/plugins/haptikos>`_.
+   Install the plugin from Isaac Teleop:
+   `IsaacTeleop Haptikos plugin <https://github.com/NVIDIA/IsaacTeleop/tree/main/src/plugins/haptikos>`_.
 
 
 To use the plugin, attach the controllers to the Haptikos exoskeletons using the included mount.
@@ -618,7 +619,7 @@ Run the Haptikos plugin and teleoperation example:
          ./install/plugins/haptikos/haptikos_hands_plugin
 
       If the executable is not available under ``install/plugins/haptikos``, build the plugin by following
-      its installation instructions, then run the command again.
+      its installation instructions:  `IsaacTeleop Haptikos plugin <https://github.com/NVIDIA/IsaacTeleop/tree/main/src/plugins/haptikos>`_, then run the command again.
 
    #. Open a new terminal and prepare the CloudXR environment for Isaac Lab:
 
