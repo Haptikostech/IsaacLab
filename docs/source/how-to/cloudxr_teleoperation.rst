@@ -23,6 +23,7 @@ teleoperation in Isaac Lab.
 .. note::
 
    See :ref:`manus-vive-handtracking` and :ref:`haptikos-quest-handtracking` for more information on supported hand-tracking peripherals.
+
 .. note::
 
    **Meta Quest 3 and Pico 4 Ultra Support (Early Access)**
