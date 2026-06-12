@@ -17,9 +17,12 @@ from .xr_cfg import XrCfg
 class HaptikosQuest(OpenXRDevice):
     """Haptikos exoskeleton hand tracking and haptic feedback through OpenXR.
 
-    To run the Haptikos Plugin you need to download Isaac Teleop (`IsaacTeleop <https://github.com/NVIDIA/IsaacTeleop>`_) and install the Haptikos Plugin (`Haptikos Plugin <https://github.com/NVIDIA/IsaacTeleop/tree/main/src/plugins/haptikos>`_) that runs separately.
-    It reads controller poses and hand tracking data from the Haptikos App, combines them, and injects left and right hand joint poses into the
-    OpenXR runtime as hand tracker data.
+    To run the Haptikos Plugin you need to download Isaac Teleop
+    (`IsaacTeleop <https://github.com/NVIDIA/IsaacTeleop>`_) and install the Haptikos Plugin
+    (`Haptikos Plugin <https://github.com/NVIDIA/IsaacTeleop/tree/main/src/plugins/haptikos>`_)
+    that runs separately. It reads controller poses and hand tracking data from the Haptikos App,
+    combines them, and injects left and right hand joint poses into the OpenXR runtime as hand
+    tracker data.
 
     The Haptikos plugin currently supports Linux and has been tested with Meta Quest headsets.
     Other OpenXR headsets with controllers may also work.
@@ -34,7 +37,8 @@ class HaptikosQuest(OpenXRDevice):
 
     The Haptikos Robotics API (`Haptikos API <https://github.com/Haptikostech/HaptikosAPI>`_) must be
     downloaded and installed separately.
-    You can setup and use haptic feedback with the Haptikos Robotics API. The library provides functionality that you can use on IsaacLab and IsaacTeleop scenarios.
+    You can setup and use haptic feedback with the Haptikos Robotics API. The library provides
+    functionality that you can use on IsaacLab and IsaacTeleop scenarios.
     The headset controllers must be attached to the Haptikos exoskeletons using the included mount.
     Orientation calibration aligns the Haptikos glove forward direction with the HMD forward direction.
     """
